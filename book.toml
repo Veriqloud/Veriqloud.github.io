@@ -1,0 +1,6 @@
+[book]
+authors = ["Clement Lebrin"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Qasmat documentation"

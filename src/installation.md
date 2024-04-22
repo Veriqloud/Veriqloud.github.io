@@ -1,6 +1,7 @@
 # Installation
 
 **To be modified depending on what we will give to the user**
+
 **Add the possibility to give the configuration file**
 
 

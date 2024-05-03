@@ -58,4 +58,7 @@ However it is possible to write a custom configuration.
 ### Value descriptions 
 
 The pre-shared key is 32 bytes of random data written in base16.
-Can be produced with `openssl rand -hex 32`
+Can be produced with 
+```
+openssl rand -hex 32
+```

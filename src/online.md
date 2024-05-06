@@ -1,5 +1,7 @@
 # Use Qasmat online
 
+> 🚧​  **Work in progress:** This page is not finished, some information is missing.
+
 > ⚠️  **Warning:** Do not store files with personal information, other user might retrieve it.
 
 A version of Qasmat is deployed on our servers and can be used to test the software. The web page is accessible to this address : <!-- TODO: Add url -->

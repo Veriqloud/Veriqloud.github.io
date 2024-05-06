@@ -4,8 +4,8 @@
 
 # Tutorials
 
-- [Use Qasmat online](online.md)
-- [Deploy your own network](deployement.md)
+- [🚧​  Use Qasmat online](online.md)
+- [🚧​  Deploy your own network](deployement.md)
 
 # How-to guides 
 
@@ -13,7 +13,7 @@
 
 # Reference
 
-- [Cryptography](cryptography.md)
+- [🚧​  Cryptography](cryptography.md)
 - [API](api.md)
 
 # Explanation

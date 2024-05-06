@@ -1,5 +1,7 @@
 # Deployment
 
+> 🚧​  **Work in progress:** This page is not finished, some information is missing.
+
 In this tutorial we will learn how to deploy a Qasmat network.  
 
 ## Docker image and Kubernetes

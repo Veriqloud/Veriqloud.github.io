@@ -17,4 +17,4 @@ Here after 5 user's credentials gather:
 
 Once authenticated, you can access the dashboard which gather information about the files, the storage servers and different buttons to manage them.
 
-![Dashboard](images/dashboard.png)
+![Dashboard](../images/dashboard.png)

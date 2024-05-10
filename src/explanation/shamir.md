@@ -6,7 +6,7 @@ The line is replaced by a polynomial of degree *k-1* whose value at zero is the 
 
 To recover the secret, at least *k* points of the polynomial are retrieved from different servers and the polynomial is constructed with Lagrange's interpolation ([visualize here](https://jsxgraph.uni-bayreuth.de/wiki/index.php/Lagrange_interpolation)). *P(0)* corresponding to the secret is then computed.
 
-![Shamir](images/shamir.png)
+![Shamir](../images/shamir.png)
 
 The number of points distributed (*n*) must be greater than *k*. Those two values constitute a threshold *(k,n)* whose value is determined according to the required security (see [Security at rest](../security/at_rest.md)).
 

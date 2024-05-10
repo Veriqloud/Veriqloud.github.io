@@ -4,24 +4,24 @@
 
 # Tutorials
 
-- [🚧​  Use Qasmat online](online.md)
-- [🚧​  Deploy your own network](deployement.md)
+- [🚧​  Use Qasmat online](tutorials/online.md)
+- [🚧​  Deploy your own network](tutorials/deployement.md)
 
 # How-to guides 
 
-- [Configuration](configuration.md)
+- [Configuration](howto/configuration.md)
 
 # Reference
 
-- [🚧​  Cryptography](cryptography.md)
-- [API](api.md)
-
+- [🚧​  Cryptography](reference/cryptography.md)
+- [API](reference/api.md)
+- [🚧​ Authentication](reference/authentication.md)
 # Explanation
 
-- [What is Qasmat ?](qasmat.md)
-- [The maths behind](shamir.md)
-- [Journey of a file](file.md)
-- [Security](security/README.md)
-  - [At rest](security/at_rest.md)
-  - [In transit](security/transit.md)
+- [What is Qasmat ?](explanation/qasmat.md)
+- [The maths behind](explanation/shamir.md)
+- [Journey of a file](explanation/file.md)
+- [Security](explanation/security/README.md)
+  - [At rest](explanation/security/at_rest.md)
+  - [In transit](explanation/security/transit.md)
 

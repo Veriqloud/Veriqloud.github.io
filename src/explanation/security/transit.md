@@ -1,14 +1,14 @@
 # In transit
 
-Communication between the proxy server and the storage servers must remain secure to prevent an attacker from retrieving the shares and reconstructing the secret. This can be done with classical or quantum cryptography.
+Communication between the proxy server and the storage servers must remain secure to prevent an attacker from retrieving the shares and reconstructing the secret. This can be done with either classical or quantum cryptography.
 
-Classical security uses standards protocols, see the [cryptography section](../../cryptography) for more information.
+Classical security uses standard protocols, see the [cryptography section](../../cryptography) for more information.
 
 ## Quantum cryptography
 
-But Qasmat can also run on top of a [QKD](https://en.wikipedia.org/wiki/Quantum_key_distribution) system (see [Qline](https://veriqloud.com/solutions/qline-technical-overview/)): using keys produces with quantum communication and achieve information-theoretical security. 
+But **Qasmat** can also run on top of a [QKD](https://en.wikipedia.org/wiki/Quantum_key_distribution) system (see [**Qline**](https://veriqloud.com/solutions/qline-technical-overview/)): using keys produced with quantum communication and achieve information-theoretic security. 
 
-This require a stack a software to apply the protocol and manage the keys. Moreover, a the quantum hardware can be simulated with a software in order to replace it until it is mature enough.
+This requires a software stack to apply the protocol and manage the keys. In addition, to be quantum-ready it is possible to simulate the hardware using our software.
 
-Those three software make up a stack which is deployed with Qasmat to allow quantum-readiness.
+Those three pieces of software form a stack that is used with **Qasmat** to allow quantum-readiness.
 

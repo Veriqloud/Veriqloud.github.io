@@ -3,8 +3,7 @@
 - [Introduction](README.md)
 
 # Tutorials
-
-- [🚧​  Use Qasmat online](tutorials/online.md)
+- [🚧​  Use **Qasmat** online](tutorials/online.md)
 - [🚧​  Deploy your own network](tutorials/deployement.md)
 
 # How-to guides 
@@ -18,9 +17,9 @@
 - [🚧​ Authentication](reference/authentication.md)
 # Explanation
 
-- [What is Qasmat ?](explanation/qasmat.md)
+- [What is **Qasmat** ?](explanation/qasmat.md)
 - [The maths behind](explanation/shamir.md)
-- [Journey of a file](explanation/file.md)
+- [A file journey](explanation/file.md)
 - [Security](explanation/security/README.md)
   - [At rest](explanation/security/at_rest.md)
   - [In transit](explanation/security/transit.md)

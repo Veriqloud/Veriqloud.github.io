@@ -1,7 +1,7 @@
-# Journey of a file
+# A file journey
 
-First, the file is sent via HTTP/HTTPS from the user's browser to the proxy server. Then, because of the modulus in all the calculations, the file is split into chunks of size smaller than the modulus : the parts.
-Each part goes through Shamir: *n* shares are produced. When enough shares are ready to be sent to a specific storage, the communication module trigger a request-response exchange with the storage server.
+First, the file is sent from the user's browser to the proxy server via HTTP/HTTPS. Then, because of the modulus in all the calculations, the file is split into chunks of size smaller than the modulus : the parts.
+Each part goes through Shamir: *n* shares are created. When enough shares are ready to be sent to a specific storage, the communication module triggers a request-response exchange with the storage server.
 
 
 ```
@@ -32,4 +32,4 @@ Each part goes through Shamir: *n* shares are produced. When enough shares are r
                                                                  +-------------+ 
 ```
 
-Once all part are handled, a description of the file is stored on the proxy server with all required information.
+Once all part have been processed, a description of the file containing all the necessary information is stored on the proxy server.

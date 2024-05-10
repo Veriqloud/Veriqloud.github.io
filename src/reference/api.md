@@ -1,6 +1,6 @@
 # API
 
-The communication between the user and the proxy server is done through this REST API. It is specified like this :
+The communication between the user and the proxy server is done through this REST API. It is specified as follows :
 
 | Endpoint           | Request type | Fields to supply (if any)                                                            | Description                                   | Response type (see skeleton below) |
 |--------------------|--------------|--------------------------------------------------------------------------------------|-----------------------------------------------|------------------------------------|

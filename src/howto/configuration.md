@@ -1,6 +1,6 @@
 # Configuration
 
-Each server (proxy or storage) can be launched with the configuration by default or a custom one.
+Each server (proxy or storage) can be started with the default configuration or a custom one.
 
 ### Default values
 
@@ -57,8 +57,7 @@ However it is possible to write a custom configuration.
 
 ### Value descriptions 
 
-The pre-shared key is 32 bytes of random data written in base16.
-Can be produced with 
+If you need a pre-shared key, it can be produced with the following command : 
 ```
 openssl rand -hex 32
 ```

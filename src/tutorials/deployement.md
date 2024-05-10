@@ -2,13 +2,13 @@
 
 > 🚧​  **Work in progress:** This page is not finished, some information is missing.
 
-In this tutorial we will learn how to deploy a Qasmat network.  
+In this tutorial you will learn how to deploy a **Qasmat** network. Note that it is cloud-agnostic.  
 
 ## Docker image and Kubernetes
 
-The software is packaged in a [Docker](https://docs.docker.com/) image: the container gather a binary of the software and all the dependencies necessary to run it. It is stored in a [distribution registry](https://distribution.github.io/distribution/about/). 
-A [Kubernetes](https://kubernetes.io/) entity manages to different pods containing the Docker image along with some storage. It is responsible for the deployment of the network and its stability.
-Finally, an script is written to automatize the different deployment phases. 
+The software is packaged in a [Docker](https://docs.docker.com/) image: the container assembles a binary version of the software and all the dependencies that are needed for it to run. It is stored in a [distribution registry](https://distribution.github.io/distribution/about/). 
+A [Kubernetes](https://kubernetes.io/) entity manages different pods containing the Docker image along with some storage volumes. It is responsible for the deployment of the network and its stability.
+Finally, an script is written to automate the different deployment phases. 
 
 As a user you simply need to install a few packages, download the script and run it. 
 
@@ -16,7 +16,7 @@ As a user you simply need to install a few packages, download the script and run
 
 ### Ansible
 
-We use [Ansible](https://www.ansible.com/) to automate the management of remote systems and control their desired state, in particular to deploy the Qasmat network.
+We use [Ansible](https://www.ansible.com/) to automate the management of remote systems and control their desired state, in particular to deploy the **Qasmat** network.
 
 A comprehensive diagram can be found [here](https://docs.ansible.com/ansible/latest/getting_started/index.html), but here is a description of the main components.
 
@@ -25,16 +25,16 @@ A comprehensive diagram can be found [here](https://docs.ansible.com/ansible/lat
 - Inventory
 	A list of remote (managed) machines that are logically organized. You create an inventory on the control machine to describe host deployments to Ansible. In our case it is a `.yml` file
 - Managed machine (node)
-	A remote machine, system, or host, that Ansible controls. Does not require Ansible to be installed, but requires Python to run Ansible-generated Python code. The managed node also needs a user account (`ansible_user`) that can connect through SSH to the node with an interactive shell.
+	A remote machine, system, or host, that Ansible controls. Does not require Ansible to be installed, but does require Python. The managed node also needs a user account (`ansible_user`) that can connect via SSH to the node with an interactive shell.
 
 ### The repository
   
-The script is composed of different files and is available at <!-- TODO: Add location (marketplace or public repo) and how to download it -->.
+The script is made of different files and is available at <!-- TODO: Add location (marketplace or public repo) and how to download it -->.
 
 There are the following Ansible files:
 - `ansible.cfg`: Ansible configuration file.
-- `inventory.yml`: List of the remote hosts.
-- `playbook.yml`: Ansible task list.
+- `inventory.yml`: Remote hosts listed.
+- `playbook.yml`: Ansible tasks list.
 - `vars.yaml`: Variables as key-value pairs.
 
 The playbook is the main file, it is a list of tasks that define the order in which Ansible performs operations, from top to bottom, to achieve an overall goal. 

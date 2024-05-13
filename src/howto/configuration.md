@@ -10,7 +10,7 @@ Here are the default values :
 - encryption_and_kms : None
 - web port : fixed 3000
 - web address : 0.0.0.0
-- max file size : 52428800 bytes (50 MiB)
+- max file size : 1 000 000 000 bytes (1GB)
 - allowed cors origins : * (allow everything)
 - checking_interval: 1 day
 - renewal_duration: 15 days

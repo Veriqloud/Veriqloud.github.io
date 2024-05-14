@@ -58,4 +58,4 @@ ansible-playbook playbook.yml -i inventory.ymlansible launch
 
 ## Web client
 
-Once deployed, the software can be used through the web client, see [the dashboard section](../online.md#the-dashboard) for more information about the interface.
+Once deployed, the software can be used through the web client, see [the dashboard section](../online.md#the-dashboard) for more information about the interface. You can also check [the web client configuration section](../howto/webclient-deploy.md) to see the details on how to configure your client deployment.

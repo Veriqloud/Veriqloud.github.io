@@ -9,6 +9,7 @@
 # How-to guides 
 
 - [Configuration](howto/configuration.md)
+- [Web client](howto/webclient-deploy.md)
 
 # Reference
 

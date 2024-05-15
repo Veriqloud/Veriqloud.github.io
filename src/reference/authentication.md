@@ -32,7 +32,7 @@ Here's a scheme of how the apps must be on your server from a user point of view
 ## Web client 
 You'll also need to secure your web client behind your authentication layer to make sure anyone trying to use it is authenticated, since the web client does not have the login/logout/register mechanisms implemented.  
 
-In the web client's **Settings** tab, you'll be able to change the **Qasmat** server's URL to specify a specific instance of Qasmat that you'd want to use. By default, it is [http://localhost:3000](http://localhost:3000).
+In the web client's **Settings** tab, you'll be able to change the **Qasmat** server's URL to specify a specific instance of Qasmat that you'd want to use (if your web client provider permits it, see [Deploy the web client](/howto/webclient-deploy.md)). By default, it is [http://localhost:3000](http://localhost:3000).
 
 ## CORS (Cross-Origin Resource Sharing)
 

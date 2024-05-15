@@ -9,13 +9,13 @@
 # How-to guides 
 
 - [Configuration](howto/configuration.md)
-- [Web client](howto/webclient-deploy.md)
+- [Deploy the web client](howto/webclient-deploy.md)
 
 # Reference
 
 - [🚧​  Cryptography](reference/cryptography.md)
 - [API](reference/api.md)
-- [🚧​ Authentication](reference/authentication.md)
+- [Authentication](reference/authentication.md)
 # Explanation
 
 - [What is **Qasmat** ?](explanation/qasmat.md)

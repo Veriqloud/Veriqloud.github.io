@@ -12,3 +12,4 @@ This requires a software stack to apply the protocol and manage the keys. In add
 
 Those three pieces of software form a stack that is used with **Qasmat** to allow quantum-readiness.
 
+![Architecture](../../../images/architecture.webp)

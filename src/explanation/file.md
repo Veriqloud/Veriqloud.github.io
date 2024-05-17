@@ -33,3 +33,9 @@ Each part goes through Shamir: *n* shares are created. When enough shares are re
 ```
 
 Once all part have been processed, a description of the file containing all the necessary information is stored on the proxy server.
+
+## Protection of a file (gif)
+![Protection](../images/protection.gif)
+
+## Retrieval of a file (gif)
+![Retrieval](../images/retrieval.gif)

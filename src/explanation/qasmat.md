@@ -9,3 +9,4 @@ Lincos is a protocol which includes a secret sharing scheme such as Shamir's whi
 Finally, **Qasmat** is an implementation of this protocol in Rust. It consists of two programs : 
 - The proxy : It interacts with the user via its [API](../api), implements the Shamir and Lagrange algorithms, handles integrity proofs, etc.
 - The storage servers: They respond to requests coming from the proxy server by storing or retrieving shares in their database.
+

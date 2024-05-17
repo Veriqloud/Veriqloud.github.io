@@ -23,5 +23,5 @@
 - [A file journey](explanation/file.md)
 - [Security](explanation/security/README.md)
   - [At rest](explanation/security/at_rest.md)
-  - [In transit](explanation/security/transit.md)
+  - [In transit: the **Quantum** part](explanation/security/transit.md)
 

@@ -2,7 +2,7 @@
 
 Communication between the proxy server and the storage servers must remain secure to prevent an attacker from retrieving the shares and reconstructing the secret. This can be done with either classical or quantum cryptography.
 
-Classical security uses standard protocols, see the [cryptography section](../../cryptography) for more information.
+Classical security uses standard protocols, see the [cryptography section](../../reference/cryptography.md) for more information.
 
 ## Quantum cryptography
 

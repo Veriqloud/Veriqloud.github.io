@@ -1,8 +1,8 @@
 # Deployment
 
-> 🚧​  **Work in progress:** This page is not finished, some information is missing.
+> 🚧​  **Work in progress:** Deployement scripts and Docker images will be made available soon.
 
-In this tutorial you will learn how to deploy a **Qasmat** network. Note that it is cloud-agnostic.  
+In this tutorial you will learn how to deploy a **Qasmat** network. Note that it is cloud-agnostic. 
 
 ## Docker image and Kubernetes
 
@@ -10,7 +10,7 @@ The software is packaged in a [Docker](https://docs.docker.com/) image: the cont
 A [Kubernetes](https://kubernetes.io/) entity manages different pods containing the Docker image along with some storage volumes. It is responsible for the deployment of the network and its stability.
 Finally, an script is written to automate the different deployment phases. 
 
-As a user you simply need to install a few packages, download the script and run it. 
+As a user you simply need to install a few packages, download the docker images and the script and run it. 
 
 ## The script
 
@@ -27,9 +27,9 @@ A comprehensive diagram can be found [here](https://docs.ansible.com/ansible/lat
 - Managed machine (node)
 	A remote machine, system, or host, that Ansible controls. Does not require Ansible to be installed, but does require Python. The managed node also needs a user account (`ansible_user`) that can connect via SSH to the node with an interactive shell.
 
-### The repository
+### The container registry
   
-The script is made of different files and is available at <!-- TODO: Add location (marketplace or public repo) and how to download it -->.
+The script is made of different files and **will be** available soon. [Here](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry) is the documentation to access the files
 
 There are the following Ansible files:
 - `ansible.cfg`: Ansible configuration file.
@@ -41,8 +41,7 @@ The playbook is the main file, it is a list of tasks that define the order in wh
  
 ## Configurations
 
-<!-- TODO: Complete this part with the correct way to configure the files -->
-You can write configuration files for the proxy or the storage servers and complete the script with them. See the [configuration section](../configuration.md) for more information.
+You can write configuration files for the proxy or the storage servers and complete the script with them. See the [configuration section](../howto/configuration.md) for more information.
 
 ## Launch the script
 
@@ -58,4 +57,4 @@ ansible-playbook playbook.yml -i inventory.ymlansible launch
 
 ## Web client
 
-Once deployed, the software can be used through the web client, see [the dashboard section](../online.md#the-dashboard) for more information about the interface. You can also check [Deploy the web client](../howto/webclient-deploy.md) to see the details on how to configure your client deployment.
+Once deployed, the software can be used through the web client, see [the dashboard section](./online.md#the-dashboard) for more information about the interface. You can also check [Deploy the web client](../howto/webclient-deploy.md) to see the details on how to configure your client deployment.

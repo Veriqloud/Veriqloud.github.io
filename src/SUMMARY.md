@@ -3,8 +3,8 @@
 - [Introduction](README.md)
 
 # Tutorials
-- [🚧​  Use **Qasmat** online](tutorials/online.md)
-- [🚧​  Deploy your own network](tutorials/deployement.md)
+- [Use **Qasmat** online](tutorials/online.md)
+- [Deploy your own network](tutorials/deployement.md)
 
 # How-to guides 
 
@@ -13,7 +13,7 @@
 
 # Reference
 
-- [🚧​  Cryptography](reference/cryptography.md)
+- [Cryptography](reference/cryptography.md)
 - [API](reference/api.md)
 - [Authentication](reference/authentication.md)
 # Explanation

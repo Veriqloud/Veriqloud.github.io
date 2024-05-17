@@ -8,6 +8,6 @@ To recover the secret, at least *k* points of the polynomial are retrieved from 
 
 ![Shamir](../images/shamir.png)
 
-The number of points distributed (*n*) must be greater than *k*. Those two values constitute a threshold *(k,n)* whose value is determined according to the required security (see [Security at rest](../security/at_rest.md)).
+The number of points distributed (*n*) must be greater than *k*. Those two values constitute a threshold *(k,n)* whose value is determined according to the required security (see [Security at rest](./security/at_rest.md)).
 
 Since the coefficients are integers, everything is modular. The modulus is a prime number which avoids [basic attacks](https://en.wikipedia.org/wiki/Shamir's_secret_sharing#Problem_of_using_integer_arithmetic).

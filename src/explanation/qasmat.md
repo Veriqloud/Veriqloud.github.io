@@ -7,6 +7,6 @@ Shamir's Secret Sharing is a cryptographic method that allows a secret to be div
 Lincos is a protocol which includes a secret sharing scheme such as Shamir's which ensures the confidentiality of data at rest. The protocol also describes how to manage confidentiality in transit, integrity and authentication to achieve long-term unconditional security.
 
 Finally, **Qasmat** is an implementation of this protocol in Rust. It consists of two programs : 
-- The proxy : It interacts with the user via its [API](../api), implements the Shamir and Lagrange algorithms, handles integrity proofs, etc.
+- The proxy : It interacts with the user via its [API](../reference/api.md), implements the Shamir and Lagrange algorithms, handles integrity proofs, etc.
 - The storage servers: They respond to requests coming from the proxy server by storing or retrieving shares in their database.
 

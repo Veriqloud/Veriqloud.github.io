@@ -1,27 +1,17 @@
 # Use **Qasmat** online
 
-> 🚧​  **Work in progress:** Qasmat will be deployed in a few days.
+> ⚠️  **Warning:** Do not store critical information this is still an alpha-version
 
-> ⚠️  **Warning:** Do not store files with personal information with the fake profils, other users might retrieve it.
-
-A version of **Qasmat** **will be** deployed on our servers and can be used to test the software. The web page **will be** accessible to this address : web.veriqloud.fr
+**Qasmat** is deployed on our servers and can be used to test the software. The web page is accessible [here](https://qasmat.veriqloud.fr).
 
 ## Authentication
 
-The access to the service is limited to authenticated users for obvious reasons of security. The version deployed on our facilities is for demonstration purpose only. Therefore fake profiles can be used to try and access the software.
-
-Here after 5 user's credentials gather:
-
-| Username   | Password |
-|------------|----------|
-| fieldfare  | test     |
-| hoopoe     | test     |
-| sanderling | test     |
-| cormorant  | test     |
-| chiffchaff | test     |
+If have followed the workflow for the 100 first users you should have the credentials required to authenticated on the website. Otherwise please follow the instruction on [our website](https://veriqloud.com/solutions/qasmat/).
 
 ## The dashboard
 
 Once authenticated, you can access the dashboard which gathers information about the files, the storage servers and different buttons to manage them.
 
 ![Dashboard](../images/dashboard.png)
+
+<!-- TODO update the dashboard -->

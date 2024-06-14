@@ -4,10 +4,11 @@ The communication between the user and the proxy server is done through this RES
 
 | Endpoint           | Request type | Fields to supply (if any)                                                            | Description                                   | Response type (see skeleton below) |
 |--------------------|--------------|--------------------------------------------------------------------------------------|-----------------------------------------------|------------------------------------|
-| /api/storage       | GET          | None                                                                                 | Returns the list of connected storage servers | servers: String[]                  |
-| /api/file          | GET          | None                                                                                 | Returns the list of currently protected files | files: File[]                      |
+| /api/storage       | GET          | None                                                                                 | Returns information about connected storage servers | servers: String[], locations: String[], hosts: String[], pings: Number[]|
+| /api/file          | GET          | None                                                                                 | Returns the list of currently protected files and a percentage of storage use | files: File[], percentage: Number |
+| /api/configuration     | GET          | None                                                                                 | Returns a list of information about the configuration | version: String, limit: Number, max_file_size: Number |
 | /api/file/protect  | POST         | - `threshold` (*number*): number of parts<br/>- `file` (*file*): the file to protect | Protects a file                               | null                               |
-| /api/file/retrieve | POST         | - `name` (*string*): the filename                                                    | Retrieves a file                              | Header `X-File-Integrity` (bool)<br /> File data as a stream of bytes     |
+| /api/file/retrieve | POST         | - `name` (*string*): the filename                                                    | Retrieves a file                              | File data as a stream of bytes     |
 | /api/file/remove   | POST         | - `name` (*string*): the filename                                                    | Removes a file                                | null                               |
 
 <div class="warning">You need to specify <b>X-Remote-User</b> and <b>X-Remote-Email</b> headers in each request. It is what makes Qasmat aware of the user doing the information. See <a href="authentication.md">Authentication</a> page for more details.</div>

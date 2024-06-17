@@ -1,5 +1,7 @@
 # Use **Qasmat** online
 
+> 🔔  **Countdown:** Three days before the launch !
+
 > ⚠️  **Warning:** Do not store critical information this is still an alpha-version
 
 **Qasmat** is deployed on our servers and can be used to test the software. The web page is accessible [here](https://qasmat.veriqloud.fr).

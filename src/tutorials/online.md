@@ -1,6 +1,6 @@
 # Use **Qasmat** online
 
-> 🔔  **Countdown:** Three days before the launch !
+> 🔔  **Countdown:** One days before the launch !
 
 > ⚠️  **Warning:** Do not store critical information this is still an alpha-version
 

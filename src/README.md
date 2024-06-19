@@ -1,7 +1,5 @@
 # Introduction
 
-> 🔔  **Countdown:** One days before the launch !
-
 Welcome to the documentation site for our Secure Storage Software : **Qasmat**.
 
 ---

@@ -1,4 +1,4 @@
 # Installation
 
-> 🚧​  **Work in progress** 🚧​  
+> 🚧​  **Work in progress**: This section will be documented soon 🚧​  
 

@@ -9,4 +9,6 @@ Here is a list of common errors you might encounter. Some of these errors are sp
 - `Invalid character in the filename.`: The filename contains symbols that are not allowed. Change the filename.
 - `Some storage servers necessary for the operation are not connected.`: Too many servers are offline for the requested operation. Please contact the Qasmat administrator.
 - `Wrong value supplied for field ... Valid values are ...`: There is a problem with the form in your request.
+- `The threshold is greater than the number of servers.`: Verify the connected storage servers, the threshold must be equal or lower.
+- `The threshold must be greater to 1`: Modify the threshold in the request to be greater than 1.
 

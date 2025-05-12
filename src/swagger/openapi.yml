@@ -1,0 +1,518 @@
+openapi: 3.1.0
+info:
+  title: Qasmat API
+  version: 1.0.0
+tags:
+  - name: Public
+    description: Endpoints that do not require authentication
+  - name: Authenticated
+    description: Endpoints that require authentication
+
+paths:
+  /ping:
+    get:
+      tags:
+        - Public
+      summary: Ping the server
+      responses:
+        '200':
+          description: Ping successful
+
+  /who_am_i:
+    get:
+      tags:
+        - Authenticated
+      summary: Get the current user's name
+      responses:
+        '200':
+          description: A JSON object containing the user's name
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: string
+                        description: "The user's name"
+                        example: "Asimov"
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal server error
+
+  /configuration:
+    get:
+      tags:
+        - Authenticated
+      summary: Get configuration details
+      responses:
+        '200':
+          description: A JSON object containing the configuration details
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties: 
+                          version:
+                            type: string
+                            example: "v1.0.0"
+                          limit:
+                            type: integer
+                            format: i64
+                            example: 1000000000
+                          max_file_size:
+                            type: integer
+                            format: i64
+                            example: 100000000
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal server error
+
+  /storage:
+    get:
+      tags:
+        - Authenticated
+      summary: Get connected storage servers
+      responses:
+        '200':
+          description: A JSON object containing the list of storage servers
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Server'
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal server error
+
+  /file:
+    get:
+      tags:
+        - Authenticated
+      summary: Get files of the user
+      responses:
+        '200':
+          description: A JSON object containing the list of files
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          files:
+                            $ref: '#/components/schemas/FilesWithStorages'
+                          amount_stored:
+                            type: integer
+                            format: i64
+                            example: 300000000
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal server error
+
+  /file_access:
+    get:
+      tags:
+        - Authenticated
+      summary: Get shared files
+      parameters:
+        - in: query
+          name: with
+          schema:
+            type: string
+            enum:
+              - WithMe
+              - WithOthers
+          required: true
+          description: The sharing option
+      responses:
+        '200':
+          description: A JSON object containing the list of shared files
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          files:
+                            $ref: '#/components/schemas/FilesWithStorages'
+                          amount_stored:
+                            type: integer
+                            format: i64
+                            example: 300000000
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 400
+                status: error
+                message: "Wrong value supplied for field ... . Valid values are ..."
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal server error
+
+
+  /modify_access:
+    post:
+      tags:
+        - Authenticated
+      summary: Modify file access
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                files:
+                  type: string
+                  description: JSON string of the file list
+                mails:
+                  type: string
+                  description: JSON string of the user list
+                permission:
+                  type: string
+                  description: The access permission
+      responses:
+        '200':
+          description: Access modified successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: 'null'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: 400
+                status: error
+                message: "Wrong value supplied for field ... . Valid values are ..."
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal server error
+
+  /protect_file:
+    post:
+      tags:
+        - Authenticated
+      summary: Protect a file
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                threshold:
+                  type: string
+                  description: The threshold value
+                storage_servers:
+                  type: string
+                  description: JSON string of the storage servers
+                file:
+                  type: string
+                  format: binary
+                  description: The file to protect
+      responses:
+        '200':
+          description: File protected successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: 'null'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                Multipart:
+                  value:
+                    code: 400
+                    status: error
+                    message: "File too big, empty or wrong field."
+                AlreadyUsed:
+                  value:
+                    code: 400
+                    status: error
+                    message: "Filename is already in use."
+                EmptyFile:
+                  value:
+                    code: 400
+                    status: error
+                    message: "Empty file not handled."
+                InvalidChar:
+                  value:
+                    code: 400
+                    status: error
+                    message: "Invalid character in the filename."
+                ThresholdGreat:
+                  value:
+                    code: 400
+                    status: error
+                    message: "The threshold is greater than the number of servers."
+                ThresholdSmall:
+                  value:
+                    code: 400
+                    status: error
+                    message: "The threshold must be greater to 1"
+
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                value:
+                  code: 403
+                  status: error
+                  message: "License limit reached"
+        '500':
+          description: Internal server error
+
+  /retrieve_file:
+    post:
+      tags:
+        - Authenticated
+      summary: Retrieve a file
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: The name of the file to retrieve
+                  example: myfile.txt
+                owner:
+                  type: integer
+                  nullable: true
+                  description: The owner's ID
+                  example: 3
+      responses:
+        '200':
+          description: File retrieved successfully
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                StorageMissing:
+                  value:
+                    code: 500
+                    status: error
+                    message : "Some storage servers necessary for the operation are not connected"
+        '401':
+          description: Unauthorized
+
+  /remove_file:
+    post:
+      tags:
+        - Authenticated
+      summary: Remove a file
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: The name of the file to remove
+                  example: myfile.txt
+                owner:
+                  type: integer
+                  nullable: true
+                  description: The owner's ID
+                  example: 3
+      responses:
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                StorageMissing:
+                  value:
+                    code: 500
+                    status: error
+                    message : "Some storage servers necessary for the operation are not connected"
+        '200':
+          description: File removed successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: 'null'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    FileWithStorages:
+      type: object
+      properties:
+        file:
+          $ref: '#/components/schemas/File'
+        storages:
+          type: array
+          items:
+            type: string
+
+    File:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 4
+        name:
+          type: string
+          example: "Server 1"
+        user_id:
+          type: integer
+          example: 3
+        distribution_type:
+          type: string
+          enum:
+            - Lincos
+          example: "Lincos"
+        is_part:
+          type: boolean
+          example: false
+        date_of_protection:
+          type: string
+          format: date-time
+          example: "2025-01-01T10:00:00.000Z"
+        threshold:
+          type: integer
+          example: 2
+        byte_size:
+          type: integer
+          example: 300000
+        last_renewal:
+          type: string
+          format: date-time
+          example: "2025-02-01T10:00:00.000Z"
+        expired:
+          type: boolean
+          example: false
+        hash:
+          type: binary
+          example: "[229,252,...,246]" 
+
+    FilesWithStorages:
+      type: array
+      items:
+        type: object
+        properties:
+          file:
+            $ref: '#/components/schemas/File'
+          storage:
+            type: array
+            items:
+              type: string
+              example: "Server 1"
+
+    Server:
+      type: object
+      properties:
+        name:
+          type: string,
+          example: "Storage 1"
+        host: 
+          type: string
+          nullable: true
+          example: "Server 1"
+        location:
+          type: string
+          nullable: true
+          example: null
+        ping: 
+          type: string
+          nullable: true
+          example: "10"
+
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+        status:
+          type: string
+        message:
+          type: string
+
+    SuccessResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 200
+        status:
+          type: string
+          example: success
